@@ -1,10 +1,101 @@
-@import "reset.css";
+
+
+* {
+
+    box-sizing: border-box;
+
+}
+body{
+    background: silver;
+
+}
 
 .userCard {
-    height: 200px;
+    --colorCard: #fafbfc;
+    --colorTop: #3A355C;
+    --colorLogo: silver;
+
+    --padding-value: 30px;
+
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+   /* color: rgb(51, 51, 51);*/
+    text-align: center;
+    width: 300px;
+    background: var(--colorCard);
+
+    border-radius: 5%;
+
 }
 
-.userImageContainer{
+
+.photo {
+    --imageSize: 150px;
+    width: var(--imageSize);
+    /*max-width: 100%;*/
+    height: var(--imageSize);
+    margin-bottom: 20px;
+    object-fit: cover;
+    border-radius: 150%;
+    border: 2px solid var(--colorCard);
+    overflow: hidden;
+
+}
+.userCard:before{
+    content: '';
+    background-color: var(--colorTop);
+    position: absolute;
+    height: calc(var(--imageSize)/2);
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+.userInfoContainer {
+    font-size: 14px;
 
 }
 
+h1.serFullName {
+    color: var(--colorTop);
+    text-transform: capitalize;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+h2.userProfession {
+    color: var(--colorTop);
+    text-transform: capitalize;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.userStatContainer {
+   border: 2px solid silver;
+
+}
+
+.userStatItem {
+    background: var(--colorCard);
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: auto;
+    align-items: center;
+
+
+
+}
+.logo{
+    display: inline-block;
+    position: center;
+    width: 150px;
+    padding: 10px;
+    border-top: 1px solid var(--colorLogo);
+    color: var(--colorLogo);
+}
+
+.logo + .logo {
+    border-left: 1px solid var(--colorLogo);
+}
