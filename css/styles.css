@@ -3,16 +3,20 @@
 * {
     box-sizing: border-box;
 }
+
 :root {
     font-size: 14px;
 }
+
 body {
     background: silver;
-    height: 100vh;
+/*    height: 100vh;*/
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+ /*   align-content: center;*/
 }
 
 .userCard {
@@ -34,6 +38,8 @@ body {
 
     position: relative;
     border-radius: 0 0 10px 10px;
+
+    margin: 110px 10px 0;
 }
 
 .photo {
@@ -49,6 +55,7 @@ body {
     top: calc(var(--imageSize) / -2);
     right: 70px;
 }
+
 .userCard:before {
     content: "";
     background-color: var(--colorTop);
@@ -61,6 +68,7 @@ body {
     z-index: -1;
     border-radius: 10px;
 }
+
 .userInfoContainer {
     font-size: 1rem;
 }
@@ -78,6 +86,7 @@ h2.userProfession {
     font-size: 1em;
     font-weight: 700;
 }
+
 .userText {
     padding: 15px;
 }
@@ -91,6 +100,7 @@ h2.userProfession {
     align-items: center;
     border-radius: 10px;
 }
+
 .logo {
     display: inline-block;
 
