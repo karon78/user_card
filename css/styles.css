@@ -1,37 +1,42 @@
-
+@import "./reset.css";
 
 * {
-
     box-sizing: border-box;
-
 }
-body{
+:root {
+    font-size: 14px;
+}
+body {
     background: silver;
-
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .userCard {
     --colorCard: #fafbfc;
-    --colorTop: #3A355C;
+    --colorTop: #3a355c;
     --colorLogo: silver;
 
     --padding-value: 30px;
+    --imageSize: 150px;
 
-    display: inline-block;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 18px;
-   /* color: rgb(51, 51, 51);*/
+    /* color: rgb(51, 51, 51);*/
     text-align: center;
     width: 300px;
     background: var(--colorCard);
 
-    border-radius: 5%;
+    padding-top: 80px;
 
+    position: relative;
+    border-radius: 0 0 10px 10px;
 }
 
-
 .photo {
-    --imageSize: 150px;
     width: var(--imageSize);
     /*max-width: 100%;*/
     height: var(--imageSize);
@@ -40,21 +45,24 @@ body{
     border-radius: 150%;
     border: 2px solid var(--colorCard);
     overflow: hidden;
-
+    position: absolute;
+    top: calc(var(--imageSize) / -2);
+    right: 70px;
 }
-.userCard:before{
-    content: '';
+.userCard:before {
+    content: "";
     background-color: var(--colorTop);
     position: absolute;
-    height: calc(var(--imageSize)/2);
-    left: 0;
+    height: 150px;
+    width: inherit;
+
     right: 0;
-    top: 0;
+    top: -100px;
     z-index: -1;
+    border-radius: 10px;
 }
 .userInfoContainer {
-    font-size: 14px;
-
+    font-size: 1rem;
 }
 
 h1.serFullName {
@@ -70,10 +78,8 @@ h2.userProfession {
     font-size: 1em;
     font-weight: 700;
 }
-
-.userStatContainer {
-   border: 2px solid silver;
-
+.userText {
+    padding: 15px;
 }
 
 .userStatItem {
@@ -83,17 +89,17 @@ h2.userProfession {
     justify-content: space-evenly;
     margin-top: auto;
     align-items: center;
-
-
-
+    border-radius: 10px;
 }
-.logo{
+.logo {
     display: inline-block;
-    position: center;
-    width: 150px;
+
+    max-width: 150px;
+    width: 100%;
     padding: 10px;
     border-top: 1px solid var(--colorLogo);
     color: var(--colorLogo);
+    margin-top: auto;
 }
 
 .logo + .logo {
